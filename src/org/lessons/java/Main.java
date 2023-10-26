@@ -1,5 +1,7 @@
 package org.lessons.java;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -29,6 +31,16 @@ public class Main {
         }
         // stampo il contenuto della lista
         System.out.println(gifts);
+
+        // scrivo su file
+        try (FileWriter fileWriter = new FileWriter("./resources/gifts.txt");) {
+            //scrivo una riga per ogni regalo
+            for (Gift gift : gifts) {
+                fileWriter.write(gift.toString() + "\n");
+            }
+        } catch (IOException e) {
+            System.out.println("Impossibile scrivere file!");;
+        }
 
         //chiudo lo scanner
         scan.close();

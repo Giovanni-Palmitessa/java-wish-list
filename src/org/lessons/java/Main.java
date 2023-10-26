@@ -11,5 +11,7 @@ public class Main {
 
         //creo una collection di Regali
         List<Gift> gifts = new ArrayList<>();
+
+
     }
 }

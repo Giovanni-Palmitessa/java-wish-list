@@ -28,5 +28,9 @@ public class Main {
             }
         }
         // stampo il contenuto della lista
+        System.out.println(gifts);
+
+        //chiudo lo scanner
+        scan.close();
     }
 }

@@ -1,5 +1,7 @@
 package org.lessons.java;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,6 +10,18 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
+        //leggo il file
+        System.out.println("Hai questi regali nella tua lista!");
+        try(Scanner fileReader = new Scanner(new File("./resources/gifts.txt"))) {
+            while (fileReader.hasNextLine()) {
+                String line = fileReader.nextLine();
+                System.out.println(line);
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Impossibile leggere file!");
+        }
+
         // istanzio lo scanner
         Scanner scan = new Scanner(System.in);
 
@@ -33,7 +47,7 @@ public class Main {
         System.out.println(gifts);
 
         // scrivo su file
-        try (FileWriter fileWriter = new FileWriter("./resources/gifts.txt");) {
+        try (FileWriter fileWriter = new FileWriter("./resources/gifts.txt", true)) {
             //scrivo una riga per ogni regalo
             for (Gift gift : gifts) {
                 fileWriter.write(gift.toString() + "\n");

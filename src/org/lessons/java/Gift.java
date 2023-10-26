@@ -24,4 +24,14 @@ public class Gift {
     public void setRecipient(String recipient) {
         this.recipient = recipient;
     }
+
+    //Metodi
+
+    @Override
+    public String toString() {
+        return "Gift{" +
+                "description='" + description + '\'' +
+                ", recipient='" + recipient + '\'' +
+                '}';
+    }
 }

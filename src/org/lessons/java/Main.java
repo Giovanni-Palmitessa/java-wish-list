@@ -27,5 +27,6 @@ public class Main {
                 System.out.println("La tua lista contiene: " + gifts.size() + " regalo/i.");
             }
         }
+        // stampo il contenuto della lista
     }
 }

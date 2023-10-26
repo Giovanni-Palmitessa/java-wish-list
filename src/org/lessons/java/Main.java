@@ -21,7 +21,10 @@ public class Main {
             if (!exit) {
                 System.out.println("Dammi la descrizione del regalo.");
                 String description = scan.nextLine();
-
+                System.out.println("Dimmi per chi è il regalo.");
+                String recipient = scan.nextLine();
+                gifts.add(new Gift(description, recipient));
+                System.out.println("La tua lista contiene: " + gifts.size() + " regalo/i.");
             }
         }
     }

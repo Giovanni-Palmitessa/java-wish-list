@@ -12,6 +12,17 @@ public class Main {
         //creo una collection di Regali
         List<Gift> gifts = new ArrayList<>();
 
+        //chiedo all'utente di aggiungere nuovi regali
+        boolean exit = false;
+        System.out.println("Lista dei regali!");
+        while (!exit) {
+            System.out.println("Vuoi aggiungere un nuovo regalo alla lista? y/n");
+            exit = scan.nextLine().equals("n");
+            if (!exit) {
+                System.out.println("Dammi la descrizione del regalo.");
+                String description = scan.nextLine();
 
+            }
+        }
     }
 }
